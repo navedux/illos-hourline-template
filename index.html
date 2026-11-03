@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hourline: booking pages that send clients to the right person</title>
+<meta name="description" content="Hourline puts one booking page in front of your whole team, routes each booking to someone free and qualified, and sends the reminders. An example site with animated assets by Illos.">
+<meta property="og:title" content="Hourline">
+<meta property="og:description" content="Let clients book the right person on your team. An example site with animated assets by Illos.">
+<meta name="theme-color" content="#f7f4ef">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/src/style.css">
+<style>
+/* The credit every Illos example carries. It takes the footer's own text colour. */
+a.illos-credit.illos-credit { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, currentColor 22%, transparent); color: inherit; font-size: 13px; font-weight: 400; line-height: 1; letter-spacing: normal; text-transform: none; text-decoration: none; white-space: nowrap; transition: border-color 150ms ease-out; }
+.illos-credit svg { width: 14px; height: 14px; flex: none; fill: currentColor; }
+@media (hover: hover) and (pointer: fine) { a.illos-credit.illos-credit:hover { border-color: color-mix(in srgb, currentColor 45%, transparent); } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav__in">
+    <a class="logo" href="#top" aria-label="Hourline, back to top">
+      <svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8"/><path class="mark__hour" d="M10 8.5H21M10 19.5H21"/><path class="mark__now" d="M10 14H21"/><circle class="mark__dot" cx="8.5" cy="14" r="2.75"/></svg>
+      <span>Hourline</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#teams">Teams</a>
+      <a href="#setup">Setup</a>
+      <a href="#story">Customers</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__end">
+      <a class="nav__signin" href="#pricing">Sign in</a>
+      <a class="btn btn--primary" href="#pricing">Start free</a>
+      <button class="burger" type="button" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="i burger__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5L20 5"/><path d="M4 12L20 12"/><path d="M4 19L20 19"/></svg><svg class="i burger__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085"/></svg></button>
+    </div>
+  </div>
+  <nav class="sheet" id="menu" aria-label="Menu" hidden>
+    <a href="#teams">Teams</a>
+    <a href="#setup">Setup</a>
+    <a href="#story">Customers</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn--primary btn--lg" href="#pricing">Start free</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <h1 class="display">Let clients book the right person on your team</h1>
+        <p class="lede">Hourline puts one booking page in front of your whole team. It sends each booking to someone free and qualified, sends the reminders, and keeps every calendar in step.</p>
+        <div class="ctas">
+          <a class="btn btn--primary btn--lg" href="#pricing">Start free<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 12L4.99997 12"/><path d="M13 18C13 18 19 13.5811 19 12C19 10.4188 13 6 13 6"/></svg></a>
+          <a class="btn btn--quiet btn--lg" href="#setup">See how it works</a>
+        </div>
+        <p class="hero__note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Free for one person. No card needed.</p>
+      </div>
+      <!-- The two cards tell one story on one 3.6 s cycle: a client books on the left card, and the notification
+           on the right card follows. They sit in one data-illos container so they play and pause together. -->
+      <div class="well well--coral hero__well" data-illos>
+        <div class="hero__cal"><!-- illos:calendar-booking --></div>
+        <div class="hero__inbox"><!-- illos:notification-inbox --></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="teams" id="teams" aria-labelledby="teams-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="h2" id="teams-title">Built around how your team meets clients</h2>
+        <p class="sub">Pick your team. Hourline shapes the booking flow, the routing and the follow-up around it.</p>
+      </div>
+      <div class="personas" role="tablist" aria-label="Teams">
+        <button class="persona" role="tab" id="t-sales" aria-controls="p-sales" aria-selected="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L7 13"/><path d="M12 17L12 7"/><path d="M17 17L17 11"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"/></svg><b>Sales</b><span>Demos that land with a free rep</span></button>
+        <button class="persona" role="tab" id="t-recruiting" aria-controls="p-recruiting" aria-selected="false" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.5 13.5C11.1446 13.5097 10.8134 13.5226 10.5008 13.5379C6.8 13.7193 3.78417 16.8058 3.5 20.5002"/><path d="M20.5 21.5L19 20M19.5 17.5C19.5 15.8431 18.1569 14.5 16.5 14.5C14.8431 14.5 13.5 15.8431 13.5 17.5C13.5 19.1569 14.8431 20.5 16.5 20.5C18.1569 20.5 19.5 19.1569 19.5 17.5Z"/><circle cx="11.5" cy="6.5" r="4"/></svg><b>Recruiting</b><span>Interviews without the email chain</span></button>
+        <button class="persona" role="tab" id="t-support" aria-controls="p-support" aria-selected="false" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10.8045C17 10.4588 17 10.286 17.052 10.132C17.2032 9.68444 17.6018 9.51076 18.0011 9.32888C18.45 9.12442 18.6744 9.02219 18.8968 9.0042C19.1493 8.98378 19.4022 9.03818 19.618 9.15929C19.9041 9.31984 20.1036 9.62493 20.3079 9.87302C21.2513 11.0188 21.7229 11.5918 21.8955 12.2236C22.0348 12.7334 22.0348 13.2666 21.8955 13.7764C21.6438 14.6979 20.8485 15.4704 20.2598 16.1854C19.9587 16.5511 19.8081 16.734 19.618 16.8407C19.4022 16.9618 19.1493 17.0162 18.8968 16.9958C18.6744 16.9778 18.45 16.8756 18.0011 16.6711C17.6018 16.4892 17.2032 16.3156 17.052 15.868C17 15.714 17 15.5412 17 15.1955V10.8045Z"/><path d="M7 10.8046C7 10.3694 6.98778 9.97821 6.63591 9.6722C6.50793 9.5609 6.33825 9.48361 5.99891 9.32905C5.55001 9.12458 5.32556 9.02235 5.10316 9.00436C4.43591 8.9504 4.07692 9.40581 3.69213 9.87318C2.74875 11.019 2.27706 11.5919 2.10446 12.2237C1.96518 12.7336 1.96518 13.2668 2.10446 13.7766C2.3562 14.6981 3.15152 15.4705 3.74021 16.1856C4.11129 16.6363 4.46577 17.0475 5.10316 16.996C5.32556 16.978 5.55001 16.8757 5.99891 16.6713C6.33825 16.5167 6.50793 16.4394 6.63591 16.3281C6.98778 16.0221 7 15.631 7 15.1957V10.8046Z"/><path d="M5 9C5 5.68629 8.13401 3 12 3C15.866 3 19 5.68629 19 9"/><path d="M19 17V17.8C19 19.5673 17.2091 21 15 21H13"/></svg><b>Support</b><span>Setup calls from any ticket</span></button>
+        <button class="persona" role="tab" id="t-consulting" aria-controls="p-consulting" aria-selected="false" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.00127 8.5L1.99911 13.997C1.99782 17.2979 1.99717 18.9484 3.02235 19.974C4.04754 20.9996 5.69801 20.9996 8.99895 20.9997L15 20.9998C18.2994 20.9999 19.949 21 20.9741 19.9751C21.9992 18.9502 21.9996 17.3005 22.0002 14.0012L22.0013 8.5"/><path d="M8.49857 6.5C8.49857 5.09554 8.49857 4.39331 8.83563 3.88886C8.98154 3.67048 9.16904 3.48298 9.38743 3.33706C9.89187 3 10.5941 3 11.9986 3C13.403 3 14.1053 3 14.6097 3.33706C14.8281 3.48298 15.0156 3.67048 15.1615 3.88886C15.4986 4.39331 15.4986 5.09554 15.4986 6.5"/><path d="M19.998 6.50016L3.99885 6.5C2.8944 6.50007 1.99876 7.39568 1.99866 8.50013C1.99876 10.7091 3.79005 12.5004 5.99901 12.5006H17.9978C20.2068 12.5005 21.998 10.7093 21.9981 8.5003C21.998 7.39582 21.1024 6.50023 19.998 6.50016Z"/><path d="M9.99857 12.5V13.5C9.99857 13.965 9.99857 14.1975 10.0497 14.3882C10.1884 14.9059 10.5927 15.3102 11.1103 15.4489C11.3011 15.5 11.5336 15.5 11.9986 15.5C12.4636 15.5 12.696 15.5 12.8868 15.4489C13.4044 15.3102 13.8088 14.9059 13.9475 14.3882C13.9986 14.1975 13.9986 13.965 13.9986 13.5V12.5"/></svg><b>Consulting</b><span>Sessions that stay on the retainer</span></button>
+      </div>
+
+      <div class="persona-panel" role="tabpanel" id="p-sales" aria-labelledby="t-sales" tabindex="0">
+        <div class="persona-panel__copy">
+          <h3 class="h3">Every lead lands with a rep who is free</h3>
+          <p>Round robin shares demos across your reps by who is free and who is next. Add a rep and they start taking bookings the same hour.</p>
+          <dl class="stats">
+            <div><dt>38%</dt><dd>more demos held</dd></div>
+            <div><dt>4 min</dt><dd>from form to booked call</dd></div>
+          </dl>
+        </div>
+        <div class="well well--meadow persona-panel__well" data-illos><div class="spot spot--persona"><!-- illos:team-invite --></div></div>
+      </div>
+      <div class="persona-panel" role="tabpanel" id="p-recruiting" aria-labelledby="t-recruiting" tabindex="0" hidden>
+        <div class="persona-panel__copy">
+          <h3 class="h3">Interviews booked without the back and forth</h3>
+          <p>Candidates pick a time that suits the whole panel. Feedback sits in one thread on the booking, so the hiring lead reads it the same day.</p>
+          <dl class="stats">
+            <div><dt>6 days</dt><dd>faster to an offer</dd></div>
+            <div><dt>92%</dt><dd>booked from the first link</dd></div>
+          </dl>
+        </div>
+        <div class="well well--coral persona-panel__well" data-illos><div class="spot spot--persona"><!-- illos:comment-mention --></div></div>
+      </div>
+      <div class="persona-panel" role="tabpanel" id="p-support" aria-labelledby="t-support" tabindex="0" hidden>
+        <div class="persona-panel__copy">
+          <h3 class="h3">Setup calls that close the ticket</h3>
+          <p>Send a booking link from any ticket. The call lands with the right specialist, and the board shows what is booked and what is done.</p>
+          <dl class="stats">
+            <div><dt>31%</dt><dd>fewer repeat tickets</dd></div>
+            <div><dt>Same day</dt><dd>for most setup calls</dd></div>
+          </dl>
+        </div>
+        <div class="well well--meadow persona-panel__well" data-illos><div class="spot spot--persona"><!-- illos:task-board --></div></div>
+      </div>
+      <div class="persona-panel" role="tabpanel" id="p-consulting" aria-labelledby="t-consulting" tabindex="0" hidden>
+        <div class="persona-panel__copy">
+          <h3 class="h3">Every session with a client, easy to find</h3>
+          <p>Search past calls and notes by client. Packages keep count, so nobody books past what the retainer covers.</p>
+          <dl class="stats">
+            <div><dt>5 hrs</dt><dd>back for each consultant a week</dd></div>
+            <div><dt>0</dt><dd>sessions booked over a retainer</dd></div>
+          </dl>
+        </div>
+        <div class="well well--coral persona-panel__well" data-illos><div class="spot spot--persona"><!-- illos:search-filters --></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="setup" id="setup" aria-labelledby="setup-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="h2" id="setup-title">Set it up in an afternoon</h2>
+        <p class="sub">Three steps, and your booking page runs on its own.</p>
+      </div>
+      <div class="board well well--meadow">
+        <div class="steps" role="tablist" aria-label="Setup steps">
+          <button class="step" role="tab" id="s-rules" aria-controls="sp-rules" aria-selected="true"><span class="step__n">1</span><b>Set your rules</b><span class="step__line">Buffers, notice and reminders</span></button>
+          <button class="step" role="tab" id="s-team" aria-controls="sp-team" aria-selected="false" tabindex="-1"><span class="step__n">2</span><b>Add your team</b><span class="step__line">Who takes which kind of call</span></button>
+          <button class="step" role="tab" id="s-link" aria-controls="sp-link" aria-selected="false" tabindex="-1"><span class="step__n">3</span><b>Share your link</b><span class="step__line">One link for email and your site</span></button>
+        </div>
+
+        <div class="stage" role="tabpanel" id="sp-rules" aria-labelledby="s-rules" tabindex="0">
+          <div class="stage__copy">
+            <h3 class="h3">Your day keeps its shape</h3>
+            <p>Add a buffer after calls, ask for notice before same-day bookings, and send reminder texts a day and an hour before.</p>
+            <ul class="ticks">
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Limits per day and per week</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Holidays and time off blocked</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Deposits for paid sessions</li>
+            </ul>
+          </div>
+          <div class="stage__visual" data-illos><div class="spot spot--setup"><!-- illos:settings-toggle --></div></div>
+        </div>
+        <div class="stage" role="tabpanel" id="sp-team" aria-labelledby="s-team" tabindex="0" hidden>
+          <div class="stage__copy">
+            <h3 class="h3">The right person for every kind of call</h3>
+            <p>Choose who can be booked for intros, demos, interviews and check-ins. Guests only see the calls you open to them.</p>
+            <ul class="ticks">
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Round robin or a fixed host</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Pooled times for interview panels</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Admins see every booking</li>
+            </ul>
+          </div>
+          <div class="stage__visual" data-illos><div class="spot spot--setup"><!-- illos:role-permissions --></div></div>
+        </div>
+        <div class="stage" role="tabpanel" id="sp-link" aria-labelledby="s-link" tabindex="0" hidden>
+          <div class="stage__copy">
+            <h3 class="h3">One link, everywhere you meet clients</h3>
+            <p>Share your page in an email signature, on your site or on a printed card. Every booking still goes to the right person.</p>
+            <ul class="ticks">
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Your colours and your words</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>An embed for your website</li>
+              <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Time zones handled for clients</li>
+            </ul>
+          </div>
+          <div class="stage__visual">
+            <div class="share">
+              <p class="share__label">Your booking link</p>
+              <div class="share__field">
+                <span class="share__url" id="share-url">hourline.app/you/intro</span>
+                <button class="share__copy" type="button" data-copy="https://hourline.app/you/intro"><span class="share__icon"><svg class="i share__i-copy" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 14.5C7.5 11.2002 7.5 9.55025 8.52513 8.52513C9.55025 7.5 11.2002 7.5 14.5 7.5C17.7998 7.5 19.4497 7.5 20.4749 8.52513C21.5 9.55025 21.5 11.2002 21.5 14.5C21.5 17.7998 21.5 19.4497 20.4749 20.4749C19.4497 21.5 17.7998 21.5 14.5 21.5C11.2002 21.5 9.55025 21.5 8.52513 20.4749C7.5 19.4497 7.5 17.7998 7.5 14.5Z"/><path d="M7.5 16.5C6.10355 16.5 5.40533 16.5 4.84402 16.3036C3.83866 15.9518 3.0482 15.1613 2.69641 14.156C2.5 13.5947 2.5 12.8964 2.5 11.5V9.5C2.5 6.20017 2.5 4.55025 3.52513 3.52513C4.55025 2.5 6.20017 2.5 9.5 2.5H11.5C12.8964 2.5 13.5947 2.5 14.156 2.69641C15.1613 3.0482 15.9518 3.83866 16.3036 4.84402C16.5 5.40533 16.5 6.10355 16.5 7.5"/></svg><svg class="i share__i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg></span><span class="share__word">Copy</span></button>
+              </div>
+              <p class="share__label">Put it where clients find you</p>
+              <ul class="share__list">
+                <li><span class="share__tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6"/><path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z"/></svg></span><span><b>Email signature</b><small>A line under every email you send</small></span></li>
+                <li><span class="share__tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12C8 18 12 22 12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12Z"/><path d="M21 15H3"/><path d="M21 9H3"/></svg></span><span><b>Your website</b><small>Inline on a page, or a pop-up button</small></span></li>
+                <li><span class="share__tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6C3 4.58579 3 3.87868 3.43934 3.43934C3.87868 3 4.58579 3 6 3C7.41421 3 8.12132 3 8.56066 3.43934C9 3.87868 9 4.58579 9 6C9 7.41421 9 8.12132 8.56066 8.56066C8.12132 9 7.41421 9 6 9C4.58579 9 3.87868 9 3.43934 8.56066C3 8.12132 3 7.41421 3 6Z"/><path d="M3 18C3 16.5858 3 15.8787 3.43934 15.4393C3.87868 15 4.58579 15 6 15C7.41421 15 8.12132 15 8.56066 15.4393C9 15.8787 9 16.5858 9 18C9 19.4142 9 20.1213 8.56066 20.5607C8.12132 21 7.41421 21 6 21C4.58579 21 3.87868 21 3.43934 20.5607C3 20.1213 3 19.4142 3 18Z"/><path d="M3 12L9 12"/><path d="M12 3V8"/><path d="M15 6C15 4.58579 15 3.87868 15.4393 3.43934C15.8787 3 16.5858 3 18 3C19.4142 3 20.1213 3 20.5607 3.43934C21 3.87868 21 4.58579 21 6C21 7.41421 21 8.12132 20.5607 8.56066C20.1213 9 19.4142 9 18 9C16.5858 9 15.8787 9 15.4393 8.56066C15 8.12132 15 7.41421 15 6Z"/><path d="M21 12H15C13.5858 12 12.8787 12 12.4393 12.4393C12 12.8787 12 13.5858 12 15M12 17.7692V20.5385M15 15V16.5C15 17.9464 15.7837 18 17 18C17.5523 18 18 18.4477 18 19M16 21H15M18 15C19.4142 15 20.1213 15 20.5607 15.44C21 15.8799 21 16.5881 21 18.0043C21 19.4206 21 20.1287 20.5607 20.5687C20.24 20.8898 19.7767 20.9766 19 21"/></svg></span><span><b>Printed card</b><small>A code clients scan to book</small></span></li>
+              </ul>
+              <p class="share__status" role="status"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="h2" id="story-title">How Larkspur Advisory stopped chasing calendars</h2>
+        <p class="sub">Twelve partners, three offices and a lot of first calls. Here is what changed when every client booked through one page.</p>
+      </div>
+      <figure class="story__figure">
+        <img class="story__photo" src="/img/story-900.webp" srcset="/img/story-900.webp 900w, /img/story-1600.webp 1600w" sizes="(min-width: 1280px) 1200px, 100vw" width="1600" height="893" alt="A consultant talks a client through a plan at a small round table by a tall window" loading="lazy">
+        <blockquote class="quote">
+          <p>“We had four people trading emails to set up one client call. Now the client picks a time, the right partner gets it, and the reminder goes out without anyone touching it.”</p>
+          <footer><span class="quote__face" aria-hidden="true">MO</span><span><b>Maren Okafor</b><small>Head of operations, Larkspur Advisory</small></span></footer>
+        </blockquote>
+      </figure>
+      <dl class="story__stats">
+        <div><dt>3&times;</dt><dd>more first calls booked</dd></div>
+        <div><dt>14 hrs</dt><dd>of scheduling saved a week</dd></div>
+        <div><dt>62%</dt><dd>fewer missed calls</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="keys" id="keyboard" aria-labelledby="keys-title">
+    <div class="wrap keys__in">
+      <div class="photo keys__photo" data-illos>
+        <img src="/img/desk-800.webp" srcset="/img/desk-800.webp 800w, /img/desk-1400.webp 1400w" sizes="(min-width: 1100px) 660px, 100vw" width="1400" height="1045" alt="" loading="lazy">
+        <div class="spot spot--menu"><!-- illos:command-menu --></div>
+      </div>
+      <div class="keys__copy">
+        <h2 class="h2" id="keys-title">Book from the keyboard</h2>
+        <p class="sub">Press Cmd K anywhere in Hourline to find a client, move a booking or resend a reminder. Your hands stay on the keys.</p>
+        <dl class="shortcuts">
+          <div><dt><kbd>Cmd</kbd><kbd>K</kbd></dt><dd>Open the command menu</dd></div>
+          <div><dt><kbd>B</kbd></dt><dd>Book a new call</dd></div>
+          <div><dt><kbd>R</kbd></dt><dd>Reschedule a booking</dd></div>
+          <div><dt><kbd>L</kbd></dt><dd>Copy your booking link</dd></div>
+          <div><dt><kbd>/</kbd></dt><dd>Search clients and notes</dd></div>
+          <div><dt><kbd>Esc</kbd></dt><dd>Close any panel</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="head head--row">
+        <div>
+          <h2 class="h2" id="pricing-title">Pay for the people who take bookings</h2>
+          <p class="sub">Clients never pay to book. Start free and add seats as your team joins.</p>
+        </div>
+        <div class="period" role="radiogroup" aria-label="Billing period">
+          <button type="button" role="radio" aria-checked="true" data-period="month">Monthly</button>
+          <button type="button" role="radio" aria-checked="false" data-period="year" tabindex="-1">Yearly<span class="period__save">2 months free</span></button>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3 class="plan__name">Solo</h3>
+          <p class="plan__for">For one person taking bookings.</p>
+          <p class="plan__price"><b>$0</b><span>free for good</span></p>
+          <a class="btn btn--quiet" href="#top">Start free</a>
+          <ul class="plan__list">
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>One booking page</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Unlimited bookings</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Email reminders</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>One connected calendar</li>
+          </ul>
+        </article>
+        <article class="plan plan--main">
+          <h3 class="plan__name">Team<span class="tag">Most teams pick this</span></h3>
+          <p class="plan__for">For teams who share clients.</p>
+          <p class="plan__price"><b data-month="$12" data-year="$10">$12</b><span data-month="per seat a month" data-year="per seat a month, billed yearly">per seat a month</span></p>
+          <a class="btn btn--primary" href="#top">Start a 14 day trial</a>
+          <ul class="plan__list">
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Everything in Solo</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Round robin and pooled hosts</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Text reminders</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Routing questions</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Team roles</li>
+          </ul>
+        </article>
+        <article class="plan">
+          <h3 class="plan__name">Business</h3>
+          <p class="plan__for">For many teams with stricter rules.</p>
+          <p class="plan__price"><b data-month="$24" data-year="$20">$24</b><span data-month="per seat a month" data-year="per seat a month, billed yearly">per seat a month</span></p>
+          <a class="btn btn--quiet" href="#faq">Talk to us</a>
+          <ul class="plan__list">
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Everything in Team</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Single sign-on</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Deposits and paid sessions</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Audit log</li>
+            <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14L8.5 17.5L19 6.5"/></svg>Priority support</li>
+          </ul>
+        </article>
+      </div>
+      <p class="plans__more">More than 100 seats? <a href="#faq">Talk to us</a> about volume pricing.</p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq__in">
+      <div class="faq__side">
+        <h2 class="h2" id="faq-title">Questions, answered</h2>
+        <div class="talk">
+          <img class="talk__face" src="/img/support-480.webp" width="480" height="596" alt="Theo, from the Hourline support team" loading="lazy">
+          <div>
+            <b>Still deciding?</b>
+            <p>Book 15 minutes with Theo from our team. He will set up your first page with you.</p>
+            <a class="btn btn--quiet" href="#top">Book a call<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 12L4.99997 12"/><path d="M13 18C13 18 19 13.5811 19 12C19 10.4188 13 6 13 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="faq__list">
+        <details>
+          <summary>Do my clients need an account to book?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>No. Clients pick a time, add their details and get a confirmation by email. There is nothing to sign up for.</p>
+        </details>
+        <details>
+          <summary>Which calendars does Hourline work with?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>Hourline connects to the calendars most teams already use, and to any calendar that shares a standard feed. It checks every connected calendar before it offers a time.</p>
+        </details>
+        <details>
+          <summary>How does round robin choose who gets a booking?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>It looks at who is free at that time, who has had the fewest bookings this week, and any rules you add, such as language or region.</p>
+        </details>
+        <details>
+          <summary>Can I take payment when someone books?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>Yes, on Business. Ask for a deposit or the full price when the client books, and refund it in one click if you cancel.</p>
+        </details>
+        <details>
+          <summary>What happens when a client needs to reschedule?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>Every confirmation has a link to move or cancel the booking. The new time follows your rules, and the host hears about it straight away.</p>
+        </details>
+        <details>
+          <summary>Can I try Team before I pay?<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"/></svg></summary>
+          <p>Yes. Team is free for 14 days with up to 10 seats, and you keep your pages if you move back to Solo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <a class="logo" href="#top" aria-label="Hourline, back to top">
+        <svg class="mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8"/><path class="mark__hour" d="M10 8.5H21M10 19.5H21"/><path class="mark__now" d="M10 14H21"/><circle class="mark__dot" cx="8.5" cy="14" r="2.75"/></svg>
+        <span>Hourline</span>
+      </a>
+      <p>Booking pages, routing and reminders for teams who meet clients all day.</p>
+    </div>
+    <nav class="foot__cols" aria-label="Footer">
+      <div><p>Product</p><a href="#top">Booking pages</a><a href="#teams">Round robin</a><a href="#setup">Reminders</a><a href="#pricing">Pricing</a></div>
+      <div><p>Teams</p><a href="#teams" data-persona="t-sales">Sales</a><a href="#teams" data-persona="t-recruiting">Recruiting</a><a href="#teams" data-persona="t-support">Support</a><a href="#teams" data-persona="t-consulting">Consulting</a></div>
+      <div><p>Company</p><a href="#story">Customers</a><a href="#faq">FAQ</a><a href="#faq">Contact</a></div>
+    </nav>
+  </div>
+  <div class="wrap foot__legal">
+    <span>&copy; 2026 Hourline. A made-up company.</span>
+    <a class="illos-credit" href="https://illos.dev/?utm_source=hourline-template&amp;utm_medium=example" rel="noopener"><svg viewBox="-26.8 0 400 400" aria-hidden="true"><path fill-rule="evenodd" d="M0,253.81 L0,100 L173.21,0 L346.41,100 L346.41,300 L173.21,400 L76.6,344.23 L76.6,204 L116.6,227.09 L116.6,321.13 L173.21,353.81 L306.41,276.91 L306.41,123.09 L173.21,46.19 L40,123.09 L40,276.91 Z M76.6,140 L116.6,163.09 L116.6,203.09 L76.6,180 Z"/></svg>Animated assets by Illos</a>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
